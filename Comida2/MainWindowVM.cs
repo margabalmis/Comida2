@@ -21,22 +21,27 @@ namespace Comida2
                 NotifyPropertyChanged("PlatoLista");
             }
         }
-        private string platoSeleccionados;
+        private Plato platoSeleccionado;
 
-        public string PlatoSeleccionados
+        public Plato PlatoSeleccionado
         {
-            get { return platoSeleccionados; }
+            get { return platoSeleccionado; }
             set
             {
-                platoSeleccionados = value;
-                NotifyPropertyChanged("PlatoSeleccionados");
+                platoSeleccionado = value;
+                NotifyPropertyChanged("PlatoSelectionado");
             }
         }
+        public void QuitarSeleccionado()
+        {
+            PlatoSeleccionado = null;
+        }
+
 
         public MainWindowVM()
         {
 
-            platoLista = Plato.GetSamples(@"C:\FotosPlatos");
+            PlatoLista = Plato.GetSamples(System.IO.Path.Combine(Environment.CurrentDirectory, "FotosPlatos"));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

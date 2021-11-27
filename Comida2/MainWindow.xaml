@@ -27,39 +27,64 @@
                     HorizontalAlignment="Left">Limpiar selección</Button>
 
         </StackPanel>
-        <WrapPanel>
-            <ListBox  ItemsSource="{Binding Path=PlatoLista}" SelectedItem="PlatoSeleccionados">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                    <DockPanel Width="100" Height="140">
-                        <TextBlock DockPanel.Dock="Top"
-                                   Text="{Binding Path=Nombre}"></TextBlock>
-                        <DockPanel DockPanel.Dock="Bottom" LastChildFill="False">
-                            <Image DockPanel.Dock="Left" Source="{Binding Path=Tipo}"
-                                   Width="20"></Image>
-                            <Image Source="assets/gluten.png"
-                                   DockPanel.Dock="Right"
-                                   Width="20"
-                                   Visibility="{Binding Path=Gluten}"></Image>
-                            <Image Source="assets/milk.png"
-                                   DockPanel.Dock="Right"
-                                   Width="20"
-                                   Visibility="{Binding Path=Leche}"></Image>
-                            <Image Source="assets/sulfide.png"
-                                   DockPanel.Dock="Right"
-                                   Width="20"
-                                   Visibility="{Binding Path=Sulfitos}"></Image>
-                            <Image Source="assets/soybean.png"
-                                   DockPanel.Dock="Right"
-                                   Width="20"
-                                   Visibility="{Binding Path=Soja}"></Image>
-                         <DockPanel />
-                            <Image Source="{Binding Path=Imagen}"></Image>
+
+        <ListBox
+            ItemsSource="{Binding Path=PlatoLista}"
+            SelectedItem="PlatoSeleccionados"
+            ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+            ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel
+                        Width="100"
+                        Height="140">
+                        <TextBlock
+                            DockPanel.Dock="Top"
+                            Text="{Binding Path=Nombre}"></TextBlock>
+                        <DockPanel
+                            DockPanel.Dock="Bottom"
+                            LastChildFill="False">
+                            <Image
+                                DockPanel.Dock="Left"
+                                Source="{Binding Path=Tipo}"
+                                Width="20"></Image>
+                            <Image
+                                Source="assets/gluten.png"
+                                DockPanel.Dock="Right"
+                                Width="20"
+                                Visibility="{Binding Path=Gluten}"></Image>
+                            <Image
+                                Source="assets/milk.png"
+                                DockPanel.Dock="Right"
+                                Width="20"
+                                Visibility="{Binding Path=Leche}"></Image>
+                            <Image
+                                Source="assets/sulfide.png"
+                                DockPanel.Dock="Right"
+                                Width="20"
+                                Visibility="{Binding Path=Sulfitos}"></Image>
+                            <Image
+                                Source="assets/soybean.png"
+                                DockPanel.Dock="Right"
+                                Width="20"
+                                Visibility="{Binding Path=Soja}"></Image>
+                            <DockPanel />
+                            <Image
+                                Source="{Binding Path=Imagen}"
+                                Margin="10,0,10,10"
+                                Width="200"
+                                Height="170"
+                                Stretch="UniformToFill"></Image>
+                        </DockPanel>
                     </DockPanel>
-                    </DockPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-        </WrapPanel>
+                   
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </DockPanel>
 </Window>
