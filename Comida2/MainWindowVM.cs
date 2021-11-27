@@ -41,7 +41,7 @@ namespace Comida2
         public MainWindowVM()
         {
 
-            PlatoLista = Plato.GetSamples(System.IO.Path.Combine(Environment.CurrentDirectory, "FotosPlatos"));
+            PlatoLista = Plato.GetSamples(@"C:\FotosPlatos");
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

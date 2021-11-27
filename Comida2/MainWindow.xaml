@@ -6,11 +6,50 @@
         xmlns:local="clr-namespace:Comida2"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <DockPanel>
+
+    <Window.Resources>
+        
+        
+        <!--Genérico TextBlock-->
+        <Style TargetType="TextBlock">
+            <Setter
+                Property="Margin"
+                Value="5,5,0,0" />
+        </Style>
+        
+        <!--Genérico TextBox-->
+        <Style
+            TargetType="TextBox">
+            <Setter
+                Property="Margin"
+                Value="5,0,5,0" />
+            <Setter
+                Property="Background"
+                Value="LightGray" />
+        </Style>
+        
+        <!--Genérico ComboBox-->
+        <Style
+            TargetType="ComboBox">
+            <Setter
+                Property="Margin"
+                Value="5,0,5,0" />
+        </Style>
+
+
+
+    </Window.Resources>
+    
+    
+    
+    <DockPanel >
         <StackPanel DockPanel.Dock="Right"
-                    Width="200">
-            <TextBlock Text="Nombre del plato"></TextBlock>
-            <TextBox></TextBox>
+                    Width="200"
+                    Margin="10"
+                    Background="LightGray">
+            <TextBlock 
+                Text="Nombre del plato"></TextBlock>
+            <TextBox ></TextBox>
             <TextBlock Text="Foto del plato"></TextBlock>
             <TextBox></TextBox>
             <TextBlock Text="Tipo de comida"></TextBlock>
