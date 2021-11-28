@@ -41,7 +41,7 @@ namespace Comida2
             set
             {
                 platoSeleccionado = value;
-                NotifyPropertyChanged("PlatoSelectionado");
+                NotifyPropertyChanged("platoSeleccionado");
             }
         }
 
