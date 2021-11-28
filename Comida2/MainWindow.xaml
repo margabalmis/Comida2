@@ -117,14 +117,15 @@
                 <TextBlock
                     Text="Nombre del plato"></TextBlock>
                 <TextBox
-                    Text="{Binding Path=PlatoSeleccionado.Nombre}"></TextBox>
+                    Text="{Binding Path=PlatoSeleccionado.Nombre, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                 <TextBlock
                     Text="Foto del plato"></TextBlock>
                 <TextBox
-                    Text="{Binding Path=PlatoSeleccionado.Imagen}"></TextBox>
+                    Text="{Binding Path=PlatoSeleccionado.Imagen, UpdateSourceTrigger=PropertyChanged}"></TextBox>
                 <TextBlock
                     Text="Tipo de comida"></TextBlock>
-                <ComboBox ItemsSource="{Binding Path=TiposComida}"></ComboBox>
+                <ComboBox ItemsSource="{Binding Path=TiposComida}"
+                    SelectedItem="{Binding Path=PlatoSeleccionado.Tipo, UpdateSourceTrigger=PropertyChanged}"></ComboBox>
                 <GroupBox
                     BorderBrush="Black"
                     Padding="5"
