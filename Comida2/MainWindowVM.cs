@@ -10,7 +10,19 @@ namespace Comida2
 {
     class MainWindowVM : INotifyPropertyChanged
     {
-     
+        private ObservableCollection<string> tiposComida;
+
+        public ObservableCollection<string> TiposComida
+        {
+            get { return tiposComida; }
+            set
+            {
+                tiposComida = value;
+                NotifyPropertyChanged("TipoComida");
+            }
+        }
+
+
         private ObservableCollection<Plato> platoLista;
 
         public ObservableCollection<Plato> PlatoLista
@@ -32,6 +44,7 @@ namespace Comida2
                 NotifyPropertyChanged("PlatoSelectionado");
             }
         }
+
         public void QuitarSeleccionado()
         {
             PlatoSeleccionado = null;
@@ -42,6 +55,8 @@ namespace Comida2
         {
 
             PlatoLista = Plato.GetSamples(@"C:\FotosPlatos");
+            TiposComida = new ObservableCollection<string> { "China", "Americana", "Mexicana" };
+
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

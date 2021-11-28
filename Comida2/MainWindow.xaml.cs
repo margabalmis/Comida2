@@ -28,5 +28,10 @@ namespace Comida2
             vm = new MainWindowVM();
             this.DataContext = vm;
         }
+
+        private void LimpiarFormularioButton_Click(object sender, RoutedEventArgs e)
+        {
+            vm.QuitarSeleccionado();
+        }
     }
 }
